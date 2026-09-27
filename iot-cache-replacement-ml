@@ -1,0 +1,85 @@
+# IoT Cache Replacement Prediction
+
+A machine learning project for predicting cache replacement decisions using IoT data characteristics.
+
+## Project Overview
+
+This project explores a binary classification approach for predicting whether an IoT data item should be replaced from a cache.
+
+The project is implemented using Python and PyTorch.
+
+## Dataset
+
+The dataset contains 3,000 synthetic samples.
+
+Features:
+
+* Recency
+* Access Count
+* Size
+* Remaining TTL
+* Data Type
+
+Target:
+
+* `replacement = 0` → Keep the item
+* `replacement = 1` → Replace the item
+
+## Model
+
+The initial model is a feed-forward neural network implemented with PyTorch.
+
+Architecture:
+
+```text
+5 Input Features
+      ↓
+Linear(5 → 16)
+      ↓
+ReLU
+      ↓
+Linear(16 → 8)
+      ↓
+ReLU
+      ↓
+Linear(8 → 1)
+```
+
+The model uses:
+
+* `BCEWithLogitsLoss`
+* Adam optimizer
+* Binary classification
+
+## Initial Results
+
+The initial neural network achieved:
+
+* Accuracy: 71.17%
+* Class 0 Recall: 0.32
+* Class 1 Recall: 0.91
+
+These results are part of the initial version of the project and further experiments will be performed.
+
+## Future Work
+
+Planned improvements include:
+
+* Feature analysis
+* Logistic Regression baseline
+* Feature scaling
+* Neural network improvement
+* Hyperparameter tuning
+* Model evaluation
+* Model saving and loading
+* Exploring the connection with cache replacement algorithms
+
+## Technologies
+
+* Python
+* PyTorch
+* Scikit-learn
+* Pandas
+* NumPy
+* Google Colab
+* GitHub
